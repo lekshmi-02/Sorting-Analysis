@@ -24,12 +24,13 @@ void runOnFile(string fileName, string type, ofstream &resultFile)
 {
     ifstream inFile(fileName);
     if (!inFile) {
-        cerr << "Cannot open " << fileName << endl;
+        cerr << "Cannot open the file " << fileName << endl;
         return;
     }
 
     int n;
-    while (inFile >> n) { // read size
+    while (inFile >> n) 
+    { 
         int* arr = new int[n];
         for (int i = 0; i < n; i++) inFile >> arr[i];
 
@@ -60,7 +61,7 @@ int main()
     runOnFile("decreasing_all.txt", "decreasing", resultFile);
 
     resultFile.close();
-    cout << "All sorting done! Results saved in bubble_sort_results.txt" << endl;
+    cout << "Sorting done! Results saved in bubble_sort_results.txt" << endl;
 
     return 0;
 }
